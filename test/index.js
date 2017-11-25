@@ -1,11 +1,13 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 
 var assert = require('assert')
-var fs = require('fs')
-var join = require('path').join
+var describe = require("tape-compat")
+var it = describe.it;
 
-var db = require('..')
+var db = require('mime-db')
 
 describe('mime-db', function () {
+/*
   it('should not contain types not in src/', function () {
     var path = join(__dirname, '..', 'src')
     var types = []
@@ -20,6 +22,7 @@ describe('mime-db', function () {
       assert.ok(types.indexOf(name) !== -1, 'type "' + name + '" should be in src/')
     })
   })
+*/
 
   it('should all be mime types', function () {
     assert(Object.keys(db).every(function (name) {
@@ -60,3 +63,5 @@ describe('mime-db', function () {
     assert.equal(db['video/x-matroska'].extensions[0], 'mkv')
   })
 })
+
+return module.exports;});
