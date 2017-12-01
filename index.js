@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 
 /*!
  * mime-db
@@ -12,4 +12,4 @@ define(function(){var require = WILTON_requiresync;var module = {exports: {}};va
 
 module.exports = require('mime-db/db')
 
-return module.exports;});
+require = requireOrig;});
